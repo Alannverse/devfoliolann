@@ -208,7 +208,8 @@ const About = () => {
 
         {/* Main profile image */}
         <motion.img
-          src="public/fotoku2.jpg"
+          src="/fotoku2.jpg"
+
           alt="Profile"
           className="w-64 h-64 rounded-full shadow-xl object-cover border-4 border-gray-700/50 hover:border-cyan-400/30 transition-all"
           whileHover={{

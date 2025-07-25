@@ -1,16 +1,13 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import { Link } from "react-scroll";
 
 const Footer = () => {
   const [currentYear, setCurrentYear] = useState(2025);
-  
+
   useEffect(() => {
     setCurrentYear(new Date().getFullYear());
   }, []);
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
 
   return (
     <motion.footer
@@ -24,10 +21,10 @@ const Footer = () => {
         <motion.div
           initial={{ y: 10 }}
           animate={{ y: 0 }}
-          transition={{ 
+          transition={{
             duration: 0.6,
             delay: 0.3,
-            ease: [0.6, 0.05, -0.01, 0.9]
+            ease: [0.6, 0.05, -0.01, 0.9],
           }}
           className="flex flex-col items-center"
         >
@@ -39,13 +36,13 @@ const Footer = () => {
             }}
             transition={{
               duration: 0.6,
-              delay: 0.5
+              delay: 0.5,
             }}
             className="text-xs tracking-widest mb-2"
           >
             ALL RIGHTS RESERVED
           </motion.div>
-          
+
           {/* Year animation */}
           <motion.div
             initial={{ opacity: 0 }}
@@ -54,12 +51,12 @@ const Footer = () => {
             className="flex items-center gap-1 text-sm"
           >
             <motion.span
-              animate={{ 
+              animate={{
                 opacity: [0.6, 1, 0.6],
-                transition: { 
+                transition: {
                   duration: 3,
-                  repeat: Infinity 
-                } 
+                  repeat: Infinity,
+                },
               }}
             >
               ©
@@ -93,19 +90,20 @@ const Footer = () => {
         </motion.p>
 
         {/* Back to Top button */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.2 }}
-          className="flex justify-center mt-6"
-        >
-          <button
-            onClick={scrollToTop}
-            className="text-sm px-4 py-2 rounded-full border border-neutral-700 hover:border-neutral-500 hover:bg-neutral-800 transition duration-300"
+        <Link to="home" smooth={true} duration={500}>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.2 }}
+            className="flex justify-center mt-6"
           >
-            ↑ Back to Top
-          </button>
-        </motion.div>
+            <button
+              className="text-sm px-4 py-2 rounded-full border border-neutral-700 hover:border-neutral-500 hover:bg-neutral-800 transition duration-300"
+            >
+              ↑ Back to Top
+            </button>
+          </motion.div>
+        </Link>
       </div>
     </motion.footer>
   );
