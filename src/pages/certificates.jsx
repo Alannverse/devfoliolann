@@ -79,7 +79,6 @@ const Certificates = () => {
 
   const activities = [
     { id: 1, image: "/keg1.png" }, 
-    { id: 2, image: "/keg1.png" }, 
   ];
 
   const currentData = activeTab === "Certifications" ? Certifications : activities;
