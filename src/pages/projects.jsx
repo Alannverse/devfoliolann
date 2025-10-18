@@ -29,7 +29,7 @@ const ProjectsSection = () => {
       description: "Website resmi Program Studi Kedokteran untuk menyajikan informasi akademik, struktur kurikulum, dan kemudahan akses bagi calon mahasiswa.",
       technologies: ["PHP", "TailwindCSS", "MySQL"],
       category: ["Showcase", "Client"],
-      image: "/fkukip.jpg",
+      image: "/fkukip.png",
       accent: "teal",
     },
     {
